@@ -1,7 +1,7 @@
 format: eva
 version: 2
 models:
-  text: device-initial
+  text: device-updated
   realtime: gpt-realtime
   reasoningEffort: medium
 voice:
