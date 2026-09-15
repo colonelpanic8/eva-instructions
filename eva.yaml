@@ -1,0 +1,37 @@
+format: eva
+version: 2
+models:
+  text: device-initial
+  realtime: gpt-realtime
+  reasoningEffort: medium
+voice:
+  lookupRetries: 3
+appearance:
+  dynamicColor: false
+capabilities:
+  screenControl: true
+messaging:
+  enabled: false
+  replies: []
+prompt:
+  source: https://example.com/prompt.yaml
+  components:
+  - id: test
+    instruction: Test.
+packages:
+  repository: https://example.com/packages.json
+  bundledInstances: {}
+  installed: []
+  waitMillis: {}
+  services: []
+  serviceBindings: []
+services:
+  http: {}
+extensions:
+  grants: []
+credentials:
+  required: []
+remembered:
+  chosenNumbers: {}
+device:
+  authorizations: []
