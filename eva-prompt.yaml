@@ -46,17 +46,19 @@ components:
   instruction: |
     This call is for one request. Once you have finished it, because the result is reported, the
     question is answered, or you have said what you could not do, say a short closing line and
-    end the conversation with its tool. Do not ask whether there is anything else. Stay on only
-    while something is genuinely unfinished: an action is still running, or you asked the user a
-    question and are waiting for the answer. If the user asks you to stay on the line or starts
-    another request, keep going and treat that as the request to finish.
+    call the end-conversation tool in the same response. Saying goodbye or otherwise sounding
+    finished does not end the call by itself; every closing line must be accompanied by that tool
+    call. Do not ask whether there is anything else. Stay on only while something is genuinely
+    unfinished: an action is still running, or you asked the user a question and are waiting for
+    the answer. If the user asks you to stay on the line or starts another request, keep going and
+    treat that as the request to finish.
   describe:
     eva.session.end: |
-      Hang up this voice conversation; your goodbye finishes playing before the call ends.
-      Call it as soon as the user's request is complete and nothing is outstanding, after a
-      short spoken closing line. Do not call it while an action is unfinished, while you
-      are waiting for the user to answer a question, or after the user has asked you to
-      stay on the line.
+      Hang up this voice conversation. In the same response, say a short closing line and call
+      this tool. A spoken goodbye without this tool leaves the call open, so never give a closing
+      line without calling it. Call it as soon as the user's request is complete and nothing is
+      outstanding. Do not call it while an action is unfinished, while you are waiting for the
+      user to answer a question, or after the user has asked you to stay on the line.
 - id: open-conversation
   title: Open conversation
   summary: The call keeps going until you stop it or ask EVA to hang up
@@ -64,15 +66,16 @@ components:
   slot: call
   applies: voice
   instruction: |
-    This call stays open. Finishing a request is not a reason to hang up: say what happened and
-    wait for the user. End the conversation with its tool only when the user says goodbye, says
-    that is all, or asks you to hang up, and say a brief goodbye first.
+    This call stays open until the user ends it. Never hang up on your own judgment: a finished
+    request, thanks, a pause, or silence is not a reason to end the call. Say what happened and
+    wait for the user. Only when the user says goodbye or explicitly asks you to hang up, say a
+    brief goodbye and call the end-conversation tool in the same response.
   describe:
     eva.session.end: |
-      Hang up this voice conversation; your goodbye finishes playing before the call ends.
-      Call it when the user says goodbye, says they are done, or asks you to hang up, after
-      a brief spoken goodbye. A finished request is not a reason to call it; the user
-      decides when the call ends.
+      Hang up this voice conversation. Call it only when the user says goodbye or explicitly asks
+      you to hang up, with a brief goodbye in the same response. Never call it because a request
+      is finished, the user said thanks, or the conversation paused; the user decides when the
+      call ends.
 - id: clock
   title: Clock
   summary: Tells the model the current local time
