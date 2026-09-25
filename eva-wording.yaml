@@ -46,6 +46,12 @@ tools:
   eva.android.app.open:
     description: >-
       Launch an installed app by its visible name, such as Settings or Chrome.
+  eva.android.location.current:
+    description: >-
+      Read where the phone is now: its coordinates, how accurate and how recent the fix is, and
+      the nearest street address when the phone can look one up. Use it when the user asks where
+      they are, or before searching for places near them. It opens nothing and tells no one; pass
+      the coordinates on only to a tool the request needs.
   eva.android.contacts.search:
     description: >-
       Find phone numbers in the user's contacts by name. Use this when the user names a person
