@@ -308,6 +308,22 @@ tools:
       returned by memory search. This removes the note, not prior conversations or action
       history containing it.
 messages:
+  turn-force-stopped: "Force-stopped by you; actions already started may have had effects"
+  force-stop-abandoned: "Stopped waiting for the force-stopped action. Its outcome is unknown; it may still have effects. Check the destination before trying again. Late results will be retained."
+  device-release-uncertain: "The screen is uncertain: a force-stopped device action did not return within ten seconds and may still have effects. Observe the current screen before any further action."
+  unknown-origin: >-
+    This tool call has an unknown origin. Nothing was executed. Ask the user to
+    make a new request so the action can be tied to that request.
+  action-queued: >-
+    EVA has accepted this action and it is queued behind earlier work. The attributed data
+    identifies the pending call. Tell the user it is waiting; do not submit a duplicate or
+    claim it completed. EVA will deliver its final receipt when it finishes.
+  incomplete-action: >-
+    The tool call did not contain a completed item with valid arguments. Nothing was executed.
+    Ask the user to clarify the request if it still needs an action.
+  interrupted-response-action: >-
+    This response was interrupted or did not finish. Its tool call was not executed.
+    Follow the user's latest request; do not claim the interrupted action happened.
   web-research-instructions: >-
     Research the user's question using the hosted web search tool. If a URL is supplied, read
     that public page specifically and use other sources when needed. Cite the sources supporting
