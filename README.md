@@ -25,3 +25,15 @@ text, or both; the file format is documented in EVA's
 [architecture notes](https://github.com/colonelpanic8/eva/blob/main/docs/architecture.md).
 
 Repository: https://github.com/colonelpanic8/eva-instructions
+
+`preapprove-actions` is an optional, disabled-by-default component shown as
+**Preapprove requested actions**. Enabling it supplies standing authorization for
+steps within the user's task, including checkout, orders, account changes, and
+credential entry. Users can edit its scope and revoke it with the same switch;
+source following preserves those choices. EVA also passes this component to new
+device-task workers on versions supporting that wiring. It does not override
+provider restrictions, Android access requirements, or extension grants.
+
+To validate unpublished catalog edits against an EVA checkout, run
+`just prompt-sync /absolute/path/to/eva-instructions` there. Omitting the path
+continues to fetch the published catalog.
