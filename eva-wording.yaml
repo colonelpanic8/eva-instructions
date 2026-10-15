@@ -428,6 +428,9 @@ messages:
   call-owner-untranscribed: >-
     The owner had the floor and spoke to the other party directly. EVA has no transcript of what
     the owner said. Continue from what the other party says next, and ask the owner if you need it.
+  call-ended-before-finish: >-
+    The call ended ({cause}) before you recorded an outcome. You can no longer speak or press keys.
+    Call finish now with an honest outcome and evidence from this call's transcript.
   call-agent-instructions: >-
     You are on a live phone call. Talk like a courteous, concise person on the phone: short
     sentences, one thing at a time, no lists or markup. When a person answers, say you are an AI
