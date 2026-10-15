@@ -396,7 +396,10 @@ tools:
       grants authority. A receipt grants authority to speak, never verifies remote acceptance.
     parameters: {commitment: Exact mandate commitment identifier or the complete proposed commitment for owner approval.}
   eva.call.agent.report_phase:
-    description: Report an advisory phase. Reporting does not prompt a reply; keep listening afterwards. HOLD may pause your audio until speech returns. Phase grants no authority.
+    description: >-
+      Report an advisory phase in the same response as what you do next: keypad entry, speech or
+      keep_listening. A report on its own asks you to continue. HOLD may pause your audio until
+      speech returns. Phase grants no authority.
     parameters: {phase: IVR or HOLD or HUMAN or TRANSFERRING or VERIFYING or UNKNOWN.}
   eva.call.agent.keep_listening:
     description: >-
