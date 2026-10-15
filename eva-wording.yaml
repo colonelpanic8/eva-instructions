@@ -403,7 +403,10 @@ tools:
       Stay silent and keep listening. Call this alone, with no speech, whenever nothing on the line
       needs a reply from you. The result does not prompt a reply; you respond again when new audio arrives.
   eva.call.agent.hang_up:
-    description: Request telephony hang-up. The receipt records the request; only provider events establish the leg ended.
+    description: >-
+      Request telephony hang-up. Call finish first: the task ends with the call, so a hang-up
+      requested before an outcome is recorded waits for finish. The receipt records the request;
+      only provider events establish the leg ended.
   eva.call.agent.finish:
     description: >-
       Record an attributed outcome claim and the transcript items supporting it. This enters
@@ -449,8 +452,8 @@ messages:
     Report phase as advisory; HOLD may detach you. A replacement brain continues the same call from
     the attributed transcript and must not repeat completed DTMF or commitments. Provider traits are
     authoritative about media, caller ID, locked support and duration limits; explain limits to the
-    owner. Saying goodbye does not end the leg. Use hang_up for that, and finish with existing
-    transcript evidence and an honest outcome claim. A drop around agreement or confirmation is
+    owner. Saying goodbye does not end the leg. Call finish with existing transcript evidence and
+    an honest outcome claim, then hang_up to end the call. A drop around agreement or confirmation is
     uncertain; never redial automatically. A new callback needs a new owner-approved task.
   turn-force-stopped: "Force-stopped by you; actions already started may have had effects"
   force-stop-abandoned: "Stopped waiting for the force-stopped action. Its outcome is unknown; it may still have effects. Check the destination before trying again. Late results will be retained."
